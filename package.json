@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint --cache .",
+    "test": "pnpm build && vitest",
     "preview": "vite preview"
   },
   "dependencies": {

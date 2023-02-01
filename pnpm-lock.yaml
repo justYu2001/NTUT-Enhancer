@@ -16,6 +16,7 @@ specifiers:
   typescript: ^4.9.3
   vite: ^4.0.0
   vitest: ^0.28.2
+  vitest-fixture: ^0.5.1
 
 dependencies:
   react: 18.2.0
@@ -35,6 +36,7 @@ devDependencies:
   typescript: 4.9.4
   vite: 4.0.4_@types+node@18.11.18
   vitest: 0.28.2
+  vitest-fixture: 0.5.1_vitest@0.28.2
 
 packages:
 
@@ -2062,6 +2064,14 @@ packages:
       rollup: 3.10.0
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /vitest-fixture/0.5.1_vitest@0.28.2:
+    resolution: {integrity: sha512-qvgrLfoM2WZn9I13jO0qIuOTxsqY3eyaXdn/sC4+KuUX5nFXKmOgTLdpS6VDMSkdjA3mvPJ3shHIEgg7+wYBCQ==}
+    peerDependencies:
+      vitest: '>=0.17.0'
+    dependencies:
+      vitest: 0.28.2
     dev: true
 
   /vitest/0.28.2:

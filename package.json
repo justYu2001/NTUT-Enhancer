@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint --cache .",
     "test": "pnpm build && vitest",
+    "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },
   "dependencies": {

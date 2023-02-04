@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "ci": "pnpm run typecheck && pnpm run lint && pnpm run build && pnpm run test",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint --cache .",
-    "test": "pnpm build && vitest",
+    "test": "vitest",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },

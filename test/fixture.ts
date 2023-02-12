@@ -39,7 +39,7 @@ export const test = base.extend<TestFixtures>({
     },
     page: async ({ browser }, use) => {
         const page = await browser.newPage();
-        page.setDefaultNavigationTimeout(60_000);
+        page.setDefaultTimeout(60_000);
         await use(page);
     },
     user: async ({}, use) => {

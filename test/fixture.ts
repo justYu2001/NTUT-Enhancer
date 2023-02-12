@@ -1,5 +1,6 @@
 import { resolve } from "path";
 
+import userEvent from "@testing-library/user-event";
 import type { BrowserContext, Page } from "playwright";
 import { chromium } from "playwright";
 import { test as base } from "vitest-fixture";
@@ -7,6 +8,7 @@ import { test as base } from "vitest-fixture";
 interface TestFixtures {
     browser: BrowserContext;
     page: Page;
+    user: ReturnType<typeof userEvent.setup>;
 }
 
 export const test = base.extend<TestFixtures>({
@@ -28,5 +30,9 @@ export const test = base.extend<TestFixtures>({
     page: async ({ browser }, use) => {
         const page = await browser.newPage();
         await use(page);
+    },
+    user: async ({}, use) => {
+        const user = userEvent.setup();
+        await use(user);
     },
 });

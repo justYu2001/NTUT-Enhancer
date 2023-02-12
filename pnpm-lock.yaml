@@ -15,6 +15,7 @@ specifiers:
   '@typescript-eslint/eslint-plugin': ^5.49.0
   '@typescript-eslint/parser': ^5.48.2
   '@vitejs/plugin-react-swc': ^3.0.0
+  dotenv: ^16.0.3
   eslint: ^8.32.0
   jsdom: ^21.1.0
   playwright: ^1.30.0
@@ -44,6 +45,7 @@ devDependencies:
   '@typescript-eslint/eslint-plugin': 5.49.0_caon6io6stgpr7lz2rtbhekxqy
   '@typescript-eslint/parser': 5.48.2_7uibuqfxkfaozanbtbziikiqje
   '@vitejs/plugin-react-swc': 3.0.1_vite@4.0.4
+  dotenv: 16.0.3
   eslint: 8.32.0
   jsdom: 21.1.0
   playwright: 1.30.0
@@ -1368,6 +1370,11 @@ packages:
       dom-serializer: 2.0.0
       domelementtype: 2.3.0
       domhandler: 5.0.3
+    dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
     dev: true
 
   /eastasianwidth/0.2.0:

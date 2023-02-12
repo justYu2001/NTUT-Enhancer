@@ -10,5 +10,8 @@ export default defineConfig({
             inline: ["vitest-fixture"],
         },
         testTimeout: 60_000,
+        globals: true,
+        environment: "jsdom",
+        setupFiles: "./test/setup.ts",
     },
 });

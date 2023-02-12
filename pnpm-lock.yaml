@@ -25,6 +25,7 @@ specifiers:
   vite: ^4.0.0
   vitest: ^0.28.2
   vitest-fixture: ^0.5.1
+  zod: ^3.20.6
 
 dependencies:
   react: 18.2.0
@@ -53,6 +54,7 @@ devDependencies:
   vite: 4.0.4_@types+node@18.11.18
   vitest: 0.28.2_jsdom@21.1.0
   vitest-fixture: 0.5.1_vitest@0.28.2
+  zod: 3.20.6
 
 packages:
 
@@ -3213,4 +3215,8 @@ packages:
   /yocto-queue/1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
+    dev: true
+
+  /zod/3.20.6:
+    resolution: {integrity: sha512-oyu0m54SGCtzh6EClBVqDDlAYRz4jrVtKwQ7ZnsEmMI9HnzuZFj8QFwAY1M5uniIYACdGvv0PBWPF2kO0aNofA==}
     dev: true

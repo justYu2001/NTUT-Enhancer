@@ -7,8 +7,8 @@ describe.concurrent("Sign in without a captcha", () => {
     it("should redirect to the index page of the portal app after the user signs in successfully", async ({ env, page }) => {
         await page.goto("https://app.ntut.edu.tw/index.do");
 
-        await page.locator("#student-id").fill(env.studentID);
-        await page.locator("#password").fill(env.password);
+        await page.locator("#student-id").fill(env.STUDENT_ID);
+        await page.locator("#password").fill(env.PASSWORD);
 
         await page.locator("button[type='submit']").click();
         await page.waitForURL("https://app.ntut.edu.tw/myPortal.do*");
@@ -22,7 +22,7 @@ describe.concurrent("Sign in without a captcha", () => {
         await page.goto("https://app.ntut.edu.tw/index.do");
 
         await page.locator("#student-id").fill("a");
-        await page.locator("#password").fill(env.password);
+        await page.locator("#password").fill(env.PASSWORD);
 
         await page.locator("button[type='submit']").click();
         await page.waitForURL("https://app.ntut.edu.tw/login.do");
@@ -38,7 +38,7 @@ describe.concurrent("Sign in without a captcha", () => {
     it("should redirect to the error page when the user enters a invalid password", async ({ env, page }) => {
         await page.goto("https://app.ntut.edu.tw/index.do");
 
-        await page.locator("#student-id").fill(env.studentID);
+        await page.locator("#student-id").fill(env.STUDENT_ID);
         await page.locator("#password").fill("a");
 
         await page.locator("button[type='submit']").click();

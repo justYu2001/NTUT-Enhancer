@@ -1,7 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@crxjs/vite-plugin': 2.0.0-beta.10
+  '@crxjs/vite-plugin': 2.0.0-beta.12
   '@playwright/test': ^1.30.0
   '@testing-library/dom': ^8.20.0
   '@testing-library/jest-dom': ^5.16.5
@@ -39,7 +39,7 @@ dependencies:
   react-dom: 18.2.0_react@18.2.0
 
 devDependencies:
-  '@crxjs/vite-plugin': 2.0.0-beta.10
+  '@crxjs/vite-plugin': 2.0.0-beta.12
   '@playwright/test': 1.30.0
   '@testing-library/dom': 8.20.0
   '@testing-library/jest-dom': 5.16.5
@@ -104,8 +104,8 @@ packages:
       regenerator-runtime: 0.13.11
     dev: true
 
-  /@crxjs/vite-plugin/2.0.0-beta.10:
-    resolution: {integrity: sha512-2CktS2HLxZU2c5kPYwodqXYribN34xscA18aKprT0eeJ6TkFAAktDwi78CHlEUkn3la1ulzlShEqWTluTdb1zg==}
+  /@crxjs/vite-plugin/2.0.0-beta.12:
+    resolution: {integrity: sha512-F2SNF8aKGXF1mqg0EQisgdK1fgUud9BR52rpf9iPEKGH+41//t+qj9aRls3+iUOx3niNYujIXTMyrdyPpSzs9g==}
     dependencies:
       '@rollup/pluginutils': 4.2.1
       '@webcomponents/custom-elements': 1.5.1

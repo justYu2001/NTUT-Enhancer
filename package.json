@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "justYu2001",
   "scripts": {
-    "ci": "pnpm typecheck && pnpm lint && pnpm build && pnpm test",
+    "ci": "pnpm typecheck && pnpm lint && pnpm build:all && pnpm test",
     "dev": "plasmo dev",
     "dev:firefox": "pnpm dev --target=firefox-mv2",
     "build": "plasmo build",

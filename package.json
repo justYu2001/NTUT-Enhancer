@@ -9,6 +9,7 @@
     "build": "plasmo build",
     "build:chrome": "pnpm build",
     "build:firefox": "pnpm build --target=firefox-mv2",
+    "build:all": "pnpm build:chrome && pnpm build:firefox",
     "lint": "eslint --cache .",
     "typecheck": "tsc --noEmit",
     "test": "vitest",

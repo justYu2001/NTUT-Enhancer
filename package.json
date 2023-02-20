@@ -1,16 +1,16 @@
 {
   "name": "ntut-enhancer",
-  "private": true,
+  "displayName": "NTUT Enhancer",
   "version": "0.0.0",
-  "type": "module",
+  "author": "justYu2001",
   "scripts": {
     "ci": "pnpm typecheck && pnpm lint && pnpm build && pnpm test",
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "dev": "plasmo dev",
+    "build": "plasmo build",
     "lint": "eslint --cache .",
-    "test": "vitest",
     "typecheck": "tsc --noEmit",
-    "preview": "vite preview"
+    "test": "vitest",
+    "package": "plasmo package"
   },
   "dependencies": {
     "plasmo": "^0.65.0",

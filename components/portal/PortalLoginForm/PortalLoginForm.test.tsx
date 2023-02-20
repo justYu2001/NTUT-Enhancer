@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import { describe, it, vi } from "vitest";
+import { describe, vi } from "vitest";
 
 import PortalLoginForm from "./PortalLoginForm";
-import { test } from "test/fixture";
+import { it } from "@/tests/fixture";
 
 describe("Portal Login Form", () => {
     it("the login button should be disabled when all inputs are empty", () => {
@@ -11,7 +11,7 @@ describe("Portal Login Form", () => {
         expect(screen.getByRole("button")).toBeDisabled();
     });
 
-    test("the login button should be disabled when the password input is empty", async ({ user }) => {
+    it("the login button should be disabled when the password input is empty", async ({ user }) => {
         const { container } = render(<PortalLoginForm />);
 
         const studentIDInput = container.querySelector("#student-id") as HTMLInputElement;
@@ -20,7 +20,7 @@ describe("Portal Login Form", () => {
         expect(screen.getByRole("button")).toBeDisabled();
     });
 
-    test("the login button should be disabled when the student id input is empty", async ({ user }) => {
+    it("the login button should be disabled when the student id input is empty", async ({ user }) => {
         const { container } = render(<PortalLoginForm />);
 
         const passwordInput = container.querySelector("#password") as HTMLInputElement;
@@ -29,7 +29,7 @@ describe("Portal Login Form", () => {
         expect(screen.getByRole("button")).toBeDisabled();
     });
 
-    test("the login button should be enabled when the login form is finished", async ({ user }) => {
+    it("the login button should be enabled when the login form is finished", async ({ user }) => {
         const { container } = render(<PortalLoginForm />);
 
         const studentIDInput = container.querySelector("#student-id") as HTMLInputElement;
@@ -41,7 +41,7 @@ describe("Portal Login Form", () => {
         expect(screen.getByRole("button")).not.toBeDisabled();
     });
 
-    test("the login button should be disabled after clicking", async ({ user }) => {
+    it("the login button should be disabled after clicking", async ({ user }) => {
         const { container } = render(<PortalLoginForm />);
 
         const studentIDInput = container.querySelector("#student-id") as HTMLInputElement;
@@ -62,7 +62,7 @@ describe("Portal Login Form", () => {
         expect(handleLoginFormSubmit).toHaveBeenCalled();
     });
 
-    test("the login button should be disabled after pressing the enter key", async ({ user }) => {
+    it("the login button should be disabled after pressing the enter key", async ({ user }) => {
         const { container } = render(<PortalLoginForm />);
 
         const studentIDInput = container.querySelector("#student-id") as HTMLInputElement;

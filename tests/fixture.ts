@@ -4,7 +4,7 @@ import userEvent from "@testing-library/user-event";
 import dotenv from "dotenv";
 import type { BrowserContext, Page } from "playwright";
 import { chromium } from "playwright";
-import { test as base } from "vitest-fixture";
+import { test } from "vitest-fixture";
 import { z } from "zod";
 
 const envSchema = z.object({
@@ -21,9 +21,9 @@ interface TestFixtures {
     env: Env;
 }
 
-export const test = base.extend<TestFixtures>({
+export const it = test.extend<TestFixtures>({
     browser: async ({}, use) => {
-        const pathToExtension = resolve(__dirname, "../dist");
+        const pathToExtension = resolve(__dirname, "../build/chrome-mv3-prod");
 
         const browser = await chromium.launchPersistentContext("", {
             headless: false,

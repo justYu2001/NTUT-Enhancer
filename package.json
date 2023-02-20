@@ -6,6 +6,7 @@
   "scripts": {
     "ci": "pnpm typecheck && pnpm lint && pnpm build && pnpm test",
     "dev": "plasmo dev",
+    "dev:firefox": "pnpm dev --target=firefox-mv2",
     "build": "plasmo build",
     "build:chrome": "pnpm build",
     "build:firefox": "pnpm build --target=firefox-mv2",

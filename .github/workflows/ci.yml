@@ -11,6 +11,9 @@ on:
 jobs:
   ci:
     name: CI
+    strategy:
+      matrix:
+        browser: ['chrome', 'firefox']
     runs-on: ubuntu-latest
 
     steps:
@@ -63,10 +66,11 @@ jobs:
         run: pnpm lint
     
       - name: Build project
-        run: pnpm build
+        run: pnpm build:${{ matrix.browser }}
 
       - name: Test project
+        if: matrix.browser == 'chrome'
         env:
-          studentID: ${{ secrets.STUDENT_ID }}
-          password: ${{ secrets.PASSWORD }}
+          STUDENT_ID: ${{ secrets.STUDENT_ID }}
+          PASSWORD: ${{ secrets.PASSWORD }}
         run: HEADFUL=true xvfb-run --auto-servernum pnpm test

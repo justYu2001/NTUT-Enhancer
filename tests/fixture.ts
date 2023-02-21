@@ -4,12 +4,12 @@ import userEvent from "@testing-library/user-event";
 import dotenv from "dotenv";
 import type { BrowserContext, Page } from "playwright";
 import { chromium } from "playwright";
-import { test as base } from "vitest-fixture";
+import { test } from "vitest-fixture";
 import { z } from "zod";
 
 const envSchema = z.object({
-    studentID: z.string().min(1),
-    password: z.string().min(1),
+    STUDENT_ID: z.string().min(1),
+    PASSWORD: z.string().min(1),
 });
 
 type Env = z.infer<typeof envSchema>;
@@ -21,9 +21,9 @@ interface TestFixtures {
     env: Env;
 }
 
-export const test = base.extend<TestFixtures>({
+export const it = test.extend<TestFixtures>({
     browser: async ({}, use) => {
-        const pathToExtension = resolve(__dirname, "../dist");
+        const pathToExtension = resolve(__dirname, "../build/chrome-mv3-prod");
 
         const browser = await chromium.launchPersistentContext("", {
             headless: false,
@@ -50,8 +50,8 @@ export const test = base.extend<TestFixtures>({
         dotenv.config();
 
         const env = {
-            studentID: process.env.studentID,
-            password: process.env.password,
+            STUDENT_ID: process.env.STUDENT_ID,
+            PASSWORD: process.env.PASSWORD,
         };
         
         const parsedEnv = envSchema.safeParse(env);

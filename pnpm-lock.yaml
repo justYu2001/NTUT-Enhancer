@@ -22,6 +22,7 @@ specifiers:
   eslint-plugin-react-hooks: ^4.6.0
   http-server: ^14.1.1
   i18next: ^22.4.10
+  i18next-browser-languagedetector: ^7.0.1
   i18next-http-backend: ^2.1.1
   jsdom: ^21.1.0
   plasmo: ^0.65.0
@@ -42,6 +43,7 @@ specifiers:
 
 dependencies:
   i18next: 22.4.10
+  i18next-browser-languagedetector: 7.0.1
   i18next-http-backend: 2.1.1
   plasmo: 0.65.0_gjpyg5imi5mt2gbvkmn3a4dr7m
   react: 18.2.0
@@ -5106,6 +5108,12 @@ packages:
   /human-signals/2.1.0:
     resolution: {integrity: sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==}
     engines: {node: '>=10.17.0'}
+
+  /i18next-browser-languagedetector/7.0.1:
+    resolution: {integrity: sha512-Pa5kFwaczXJAeHE56CHG2aWzFBMJNUNghf0Pm4SwSrEMps/PTKqW90EYWlIvhuYStf3Sn1K0vw+gH3+TLdkH1g==}
+    dependencies:
+      '@babel/runtime': 7.20.13
+    dev: false
 
   /i18next-http-backend/2.1.1:
     resolution: {integrity: sha512-jByfUCDVgQ8+/Wens7queQhYYvMcGTW/lR4IJJNEDDXnmqjLrwi8ubXKpmp76/JIWEZHffNdWqnxFJcTVGeaOw==}

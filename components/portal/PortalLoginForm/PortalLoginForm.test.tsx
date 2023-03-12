@@ -3,6 +3,7 @@ import { describe, vi } from "vitest";
 
 import PortalLoginForm from "./PortalLoginForm";
 import { it } from "@/tests/fixture";
+import { renderWithI18next } from "@/tests/i18n";
 
 describe("Portal Login Form", () => {
     it("the login button should be disabled when all inputs are empty", () => {
@@ -82,5 +83,53 @@ describe("Portal Login Form", () => {
 
         expect(loginButton).toBeDisabled();
         expect(handleLoginFormSubmit).toHaveBeenCalled();
+    });
+
+    it("chinese localization", async () => {
+        const { container } = await renderWithI18next(<PortalLoginForm />, "zh");
+
+        const studentIDLabel = container.querySelector("label[for='student-id']") as HTMLLabelElement;
+        expect(studentIDLabel.textContent).toBe("學號");
+
+        const passwordLabel = container.querySelector("label[for='password']") as HTMLLabelElement;
+        expect(passwordLabel.textContent).toBe("密碼");
+
+        const passwordRecoveryLink = screen.getByRole("link");
+        expect(passwordRecoveryLink.textContent).toBe("忘記密碼？");
+        expect(passwordRecoveryLink.getAttribute("href")).toBe("https://cnc.ntut.edu.tw/p/404-1004-3890.php?Lang=zh-tw");
+
+        expect(screen.getByRole("button").textContent).toBe("登入");
+    });
+
+    it("english localization", async () => {
+        const { container } = await renderWithI18next(<PortalLoginForm />, "en");
+
+        const studentIDLabel = container.querySelector("label[for='student-id']") as HTMLLabelElement;
+        expect(studentIDLabel.textContent).toBe("Student ID");
+
+        const passwordLabel = container.querySelector("label[for='password']") as HTMLLabelElement;
+        expect(passwordLabel.textContent).toBe("Password");
+
+        const passwordRecoveryLink = screen.getByRole("link");
+        expect(passwordRecoveryLink.textContent).toBe("Forgot password?");
+        expect(passwordRecoveryLink.getAttribute("href")).toBe("https://cnc.ntut.edu.tw/p/405-1004-78726,c12303.php?Lang=en#q1");
+
+        expect(screen.getByRole("button").textContent).toBe("Log In");
+    });
+
+    it("unsupported language localization", async () => {
+        const { container } = await renderWithI18next(<PortalLoginForm />, "de");
+
+        const studentIDLabel = container.querySelector("label[for='student-id']") as HTMLLabelElement;
+        expect(studentIDLabel.textContent).toBe("Student ID");
+
+        const passwordLabel = container.querySelector("label[for='password']") as HTMLLabelElement;
+        expect(passwordLabel.textContent).toBe("Password");
+
+        const passwordRecoveryLink = screen.getByRole("link");
+        expect(passwordRecoveryLink.textContent).toBe("Forgot password?");
+        expect(passwordRecoveryLink.getAttribute("href")).toBe("https://cnc.ntut.edu.tw/p/405-1004-78726,c12303.php?Lang=en#q1");
+
+        expect(screen.getByRole("button").textContent).toBe("Log In");
     });
 });

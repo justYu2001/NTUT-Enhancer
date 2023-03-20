@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "justYu2001",
   "scripts": {
-    "ci": "pnpm typecheck && pnpm lint && pnpm build:all && pnpm test",
+    "ci": "pnpm typecheck && pnpm lint && pnpm build:all && server-test 'http-server -s' http://127.0.0.1:8080 test",
     "dev": "plasmo dev",
     "dev:firefox": "pnpm dev --target=firefox-mv2",
     "build": "plasmo build",
@@ -17,9 +17,14 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "i18next": "^22.4.10",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.1.1",
     "plasmo": "^0.67.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-i18next": "^12.2.0",
+    "react-icons": "^4.8.0"
   },
   "devDependencies": {
     "@plasmohq/prettier-plugin-sort-imports": "^3.6.1",
@@ -41,16 +46,30 @@
     "eslint": "^8.32.0",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "http-server": "^14.1.1",
     "jsdom": "^21.1.0",
     "playwright": "^1.30.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.4",
     "prettier-plugin-tailwindcss": "^0.2.2",
+    "start-server-and-test": "^1.15.4",
     "tailwindcss": "^3.2.6",
     "typescript": "^4.9.3",
     "vite": "^4.0.0",
     "vitest": "^0.29.0",
     "vitest-fixture": "^0.5.1",
     "zod": "^3.20.6"
+  },
+  "manifest": {
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "locales/*/*.json"
+        ],
+        "matches": [
+          "https://*/*"
+        ]
+      }
+    ]
   }
 }

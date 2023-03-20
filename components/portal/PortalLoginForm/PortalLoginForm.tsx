@@ -1,6 +1,7 @@
 import { FormEvent, useState } from "react";
 
-import "@/index.css";
+import { useTranslation } from "react-i18next";
+
 import Input from "@/components/portal/PortalLoginInput";
 
 type FormInputEvent = FormEvent<HTMLInputElement>;
@@ -20,6 +21,8 @@ const PortalLoginForm = () => {
 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    const { t } = useTranslation();
+
     return (
         <form
             action="login.do"
@@ -30,7 +33,7 @@ const PortalLoginForm = () => {
             <Input
                 id="student-id"
                 name="muid"
-                label="學號"
+                label={t("Student ID")}
                 value={studentID}
                 onChange={handelStudentIDInputChange}
             />
@@ -38,27 +41,25 @@ const PortalLoginForm = () => {
                 type="password"
                 id="password"
                 name="mpassword"
-                label="密碼"
+                label={t("Password")}
                 value={password}
                 autoComplete="current-password"
                 onChange={handelPasswordInputChange}
             />
             <a
-                href="https://cnc.ntut.edu.tw/p/404-1004-3890.php?Lang=zh-tw"
+                href={t("password recovery link")}
                 target="_blank"
                 rel="noreferrer noopenner"
                 className="-my-1 self-start pl-1 text-slate-400 transition-colors duration-300 hover:text-slate-500"
             >
-                忘記密碼？
+                {t("Forgot password?")}
             </a>
             <button
                 type="submit"
-                disabled={
-                    studentID.length === 0 || password.length === 0 || isLoggedIn
-                }
+                disabled={studentID.length === 0 || password.length === 0 || isLoggedIn}
                 className="mt-10 rounded bg-blue-600 py-2 text-xl font-bold tracking-wide text-white disabled:bg-blue-600/40"
             >
-                登入
+                {t("Log In")}
             </button>
         </form>
     );

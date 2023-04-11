@@ -18,7 +18,7 @@ interface TestFixtures {
     browser: BrowserContext;
     page: Page;
     extensionId: string;
-    popupPageUrl: string;
+    popupPage: Page;
     user: ReturnType<typeof userEvent.setup>;
     env: Env;
 }
@@ -55,9 +55,10 @@ export const it = test.extend<TestFixtures>({
         const extensionId = background.url().split("/")[2];
         await use(extensionId);
     },
-    popupPageUrl: async ({ extensionId }, use) => {
-        const popupPageUrl = `chrome-extension://${extensionId}/popup.html`;
-        await use(popupPageUrl);
+    popupPage: async ({ browser, extensionId }, use) => {
+        const page = await browser.newPage();
+        await page.goto(`chrome-extension://${extensionId}/popup.html`);
+        await use(page);
     },
     user: async ({}, use) => {
         const user = userEvent.setup();

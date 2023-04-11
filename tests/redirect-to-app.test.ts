@@ -25,7 +25,7 @@ describe.concurrent("end-to-end testing for redirecting to the app portal", () =
         page,
     }) => {
         await page.goto("https://www.google.com");
-        await page.locator("input[type='text']").first().fill("北科入口");
+        await page.locator("input[type='text'], textarea").first().fill("北科入口");
         await page.keyboard.down("Enter");
         await page.locator("a[href='https://nportal.ntut.edu.tw/']").click();
         await page.waitForURL("https://app.ntut.edu.tw/index.do");

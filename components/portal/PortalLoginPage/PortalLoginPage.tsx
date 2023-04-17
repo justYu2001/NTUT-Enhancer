@@ -31,9 +31,7 @@ const PortalLoginPage = () => {
             </div>
             <div className="relative flex flex-col items-center justify-center">
                 <div className="absolute top-6 right-6">
-                    <button
-                        className="flex items-center text-lg font-medium text-slate-400 hover:text-blue-600"
-                        onClick={changeLanguage}>
+                    <button className="flex items-center text-slate-400 font-medium hover:text-blue-600 text-lg" onClick={changeLanguage}>
                         {getOppositeLanguage()}
                         <IoEarth className="ml-1.5 text-2xl" />
                     </button>

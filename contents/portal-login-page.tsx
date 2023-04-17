@@ -1,5 +1,6 @@
 import type { PlasmoCSConfig, PlasmoGetStyle } from "plasmo";
 
+import "@/utils/i18n";
 import { style } from "@/utils/style";
 import cssText from "data-text:/index.css";
 

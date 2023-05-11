@@ -2,27 +2,12 @@ import { useTranslation } from "react-i18next";
 import { IoEarth } from "react-icons/io5";
 
 import LoginForm from "@/components/portal/PortalLoginForm";
+import { getOppositeLanguage, changeLanguage } from "@/utils/localization";
 import NTUTLogo from "url:/assets/images/ntut-logo.png";
 import RedHouseImage from "url:/assets/images/red-house.jpeg";
 
 const PortalLoginPage = () => {
     const { t, i18n } = useTranslation();
-
-    const getOppositeLanguage = () => {
-        if (i18n.language === "zh") {
-            return "English";
-        } else {
-            return "中文";
-        }
-    };
-
-    const changeLanguage = () => {
-        if (i18n.language === "zh") {
-            i18n.changeLanguage("en");
-        } else {
-            i18n.changeLanguage("zh");
-        }
-    };
 
     return (
         <div className="grid h-screen min-w-[960px] grid-cols-2">
@@ -31,8 +16,11 @@ const PortalLoginPage = () => {
             </div>
             <div className="relative flex flex-col items-center justify-center">
                 <div className="absolute top-6 right-6">
-                    <button className="flex items-center text-slate-400 font-medium hover:text-blue-600 text-lg" onClick={changeLanguage}>
-                        {getOppositeLanguage()}
+                    <button 
+                        className="flex items-center text-slate-400 font-medium hover:text-blue-600 text-lg"
+                        onClick={() => changeLanguage(i18n)}
+                    >
+                        {getOppositeLanguage(i18n)}
                         <IoEarth className="ml-1.5 text-2xl" />
                     </button>
                 </div>

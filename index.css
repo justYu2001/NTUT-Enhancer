@@ -7,5 +7,10 @@
 @layer base {
     html {
         font-family: 'Noto Sans', sans-serif;
+        font-size: 16px;
+    }
+
+    button {
+        outline: none;
     }
 }

@@ -5,7 +5,7 @@ import PortalLoginPage from "./PortalLoginPage";
 import { it } from "tests/fixture";
 import { renderWithI18next } from "tests/i18n";
 
-describe("Portal Login Page", () => {    
+describe("Portal Login Page", () => {   
     it("chinese localization", async () => {
         const { container } = await renderWithI18next(<PortalLoginPage />, "zh");
 
